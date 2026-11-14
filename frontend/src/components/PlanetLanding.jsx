@@ -7,6 +7,8 @@ export default function PlanetLanding({
   currentIndex,
   onSelectPlanet,
   onGetStarted,
+  onLaunchMission,
+  activeMission,
   visible = true
 }) {
   if (!visible) return null;
@@ -48,13 +50,23 @@ export default function PlanetLanding({
               {currentPlanet.landingIntro}
             </p>
 
-            {/* GET STARTED Pill Button */}
-            <button
-              onClick={onGetStarted}
-              className="px-9 py-3 rounded-full bg-[#E5EEF8] hover:bg-white text-[#050B18] font-bold text-xs tracking-[0.16em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(255,255,255,0.35)] active:scale-95"
-            >
-              GET STARTED
-            </button>
+            {/* Action Buttons: Orbit Exploration and Mission Control */}
+            <div className="flex flex-wrap items-center justify-center gap-3.5 mb-2">
+              <button
+                onClick={onGetStarted}
+                className="px-7 py-3 rounded-full bg-[#E5EEF8] hover:bg-white text-[#050B18] font-bold text-xs tracking-[0.16em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(255,255,255,0.35)] active:scale-95"
+              >
+                EXPLORE ORBIT
+              </button>
+
+              <button
+                onClick={onLaunchMission}
+                className="px-7 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-[#050B18] font-bold text-xs tracking-[0.16em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(77,238,234,0.45)] active:scale-95 flex items-center gap-2"
+              >
+                <span>{activeMission ? `RESUME SOL ${activeMission.current_day}` : 'LAUNCH MISSION CONTROL'}</span>
+                <span className="text-sm">🚀</span>
+              </button>
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>

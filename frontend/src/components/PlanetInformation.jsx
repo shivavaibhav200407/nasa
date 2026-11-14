@@ -6,7 +6,9 @@ export default function PlanetInformation({
   planet,
   visible = true,
   onLearnMore,
-  onBackToLanding
+  onBackToLanding,
+  onLaunchMission,
+  activeMission,
 }) {
   if (!visible || !planet) return null;
 
@@ -53,12 +55,20 @@ export default function PlanetInformation({
             </p>
 
             {/* Action Buttons */}
-            <div className="flex items-center gap-3.5">
+            <div className="flex flex-wrap items-center gap-3">
               <button
                 onClick={onLearnMore}
-                className="px-8 py-3 rounded-full bg-[#E5EEF8] hover:bg-white text-[#050B18] font-bold text-xs tracking-[0.16em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(255,255,255,0.35)] active:scale-95"
+                className="px-7 py-3 rounded-full bg-[#E5EEF8] hover:bg-white text-[#050B18] font-bold text-xs tracking-[0.16em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(255,255,255,0.35)] active:scale-95"
               >
-                VIEW MORE
+                SURFACE VIEW
+              </button>
+
+              <button
+                onClick={onLaunchMission}
+                className="px-6 py-3 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-400/40 font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-[0_0_15px_rgba(77,238,234,0.25)] active:scale-95 flex items-center gap-2"
+              >
+                <span>{activeMission ? `SOL ${activeMission.current_day} TELEMETRY` : 'MISSION CONTROL'}</span>
+                <span>🚀</span>
               </button>
 
               <button
