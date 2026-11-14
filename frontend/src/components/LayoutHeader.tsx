@@ -30,7 +30,6 @@ interface LayoutHeaderProps {
   missionStatus?: MissionStatus;
   pendingEventCount?: number;
   onExit?: () => void;
-  onOpenCosmos?: () => void;
 }
 
 export const LayoutHeader: React.FC<LayoutHeaderProps> = ({
@@ -42,7 +41,6 @@ export const LayoutHeader: React.FC<LayoutHeaderProps> = ({
   missionStatus,
   pendingEventCount = 0,
   onExit,
-  onOpenCosmos,
 }) => {
   const [showAboutModal, setShowAboutModal] = useState(false);
   const [showFlightManual, setShowFlightManual] = useState(false);
@@ -217,23 +215,6 @@ export const LayoutHeader: React.FC<LayoutHeaderProps> = ({
               {reducedEffects ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
             </button>
 
-            {/* 3D Cosmos Orbit View Switcher */}
-            <button
-              onClick={() => {
-                sound.playClick();
-                if (onOpenCosmos) {
-                  onOpenCosmos();
-                } else if (onExit) {
-                  onExit();
-                }
-              }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cinematic-glass border border-cinematic-cyan/50 text-cinematic-cyan hover:bg-cinematic-cyan/20 text-xs font-mono font-medium transition-all shadow-[0_0_12px_rgba(111,231,238,0.25)] active:scale-95"
-              title="Return to 3D Solar System & Planetary Explorer"
-            >
-              <span className="text-sm">🪐</span>
-              <span className="hidden sm:inline">3D Cosmos</span>
-            </button>
-
             {/* Flight Manual Pill Button */}
             <PillButton
               variant="primary"
@@ -312,23 +293,7 @@ export const LayoutHeader: React.FC<LayoutHeaderProps> = ({
               <Sparkles className="w-4 h-4" />
             </button>
 
-            <div className="pt-2 space-y-2">
-              <button
-                onClick={() => {
-                  sound.playClick();
-                  setMobileMenuOpen(false);
-                  if (onOpenCosmos) {
-                    onOpenCosmos();
-                  } else if (onExit) {
-                    onExit();
-                  }
-                }}
-                className="w-full py-2 px-3 rounded-full bg-cinematic-cyan/20 border border-cinematic-cyan/40 text-cinematic-cyan font-mono text-xs flex items-center justify-center gap-2"
-              >
-                <span>🪐</span>
-                <span>3D Solar System View</span>
-              </button>
-
+            <div className="pt-2">
               <PillButton
                 variant="primary"
                 size="sm"
