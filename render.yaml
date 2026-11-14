@@ -1,0 +1,21 @@
+services:
+  # ASTRA FastAPI Backend Service
+  - type: web
+    name: astra-backend
+    env: python
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.7
+      - key: DATABASE_URL
+        value: sqlite:////var/data/astra.db
+      - key: CORS_ORIGINS
+        value: "*"
+    disk:
+      name: astra-data
+      mountPath: /var/data
+      sizeGB: 1
