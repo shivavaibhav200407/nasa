@@ -31,6 +31,9 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
+
 # Configure CORS
 origins = settings.cors_origins
 app.add_middleware(
@@ -44,13 +47,17 @@ app.add_middleware(
 # Mount API router
 app.include_router(router)
 
-
-@app.get("/")
-def root():
-    return {
-        "app": "ASTRA – Junior Astronaut Mission Trainer",
-        "version": "1.0.0",
-        "status": "operational",
-        "docs_url": "/docs",
-        "disclaimer": "Independent educational project; not affiliated with, endorsed by, or certified by NASA.",
-    }
+# Serve built frontend at root if dist/ exists; otherwise fallback to JSON
+frontend_dist = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
+if frontend_dist.exists():
+    app.mount("/", StaticFiles(directory=str(frontend_dist), html=True), name="frontend")
+else:
+    @app.get("/")
+    def root():
+        return {
+            "app": "ASTRA – Junior Astronaut Mission Trainer",
+            "version": "1.0.0",
+            "status": "operational",
+            "docs_url": "/docs",
+            "disclaimer": "Independent educational project; not affiliated with, endorsed by, or certified by NASA.",
+        }
