@@ -19,3 +19,17 @@ services:
       name: astra-data
       mountPath: /var/data
       sizeGB: 1
+
+  # COSMOS 3D Planet Explorer Frontend Static Site
+  - type: web
+    name: cosmos-frontend
+    env: static
+    region: oregon
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

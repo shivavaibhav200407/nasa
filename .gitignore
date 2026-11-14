@@ -1,3 +1,8 @@
+# Backups & Local Artifacts
+frontend_astra_backup/
+vaibhav/
+vaibhav.zip
+
 # Python
 __pycache__/
 *.py[cod]
