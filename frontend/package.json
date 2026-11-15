@@ -23,9 +23,7 @@
     "recharts": "^3.10.1"
   },
   "devDependencies": {
-    "@oxlint/binding-win32-x64-msvc": "^1.93.0",
     "@playwright/test": "^1.65.1",
-    "@rolldown/binding-win32-x64-msvc": "^1.2.19",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.3",
     "@types/node": "^24.19.2",
