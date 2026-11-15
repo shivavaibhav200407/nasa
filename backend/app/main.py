@@ -25,7 +25,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="ASTRA – Junior Astronaut Mission Trainer",
+    title="astra-mission-trainer",
     description="Educational 90-day lunar outpost simulation backend for 2026 NASA Space Apps Challenge.",
     version="1.0.0",
     lifespan=lifespan,
@@ -55,7 +55,7 @@ else:
     @app.get("/")
     def root():
         return {
-            "app": "ASTRA – Junior Astronaut Mission Trainer",
+            "app": "astra-mission-trainer",
             "version": "1.0.0",
             "status": "operational",
             "docs_url": "/docs",

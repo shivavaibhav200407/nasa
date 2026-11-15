@@ -1,5 +1,6 @@
-# ASTRA – Junior Astronaut Mission Trainer
+# astra-mission-trainer
 
+**ASTRA – Mission Trainer**
 **2026 NASA Space Apps Challenge Entry**
 
 ASTRA is an interactive 2D/2.5D educational space mission simulation web application designed for beginner and intermediate STEM students. The student assumes the role of **Mission Commander** at a lunar research outpost, tasked with keeping a crew of four astronauts alive across a 90-day mission by managing six coupled survival and engineering systems: **Oxygen**, **Water**, **Energy**, **Food**, **Radiation Safety**, and **Crew Health**.

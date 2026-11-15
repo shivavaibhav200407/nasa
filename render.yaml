@@ -1,7 +1,7 @@
 services:
   # ASTRA FastAPI Backend Service
   - type: web
-    name: astra-backend
+    name: astra-mission-trainer-api
     env: python
     region: oregon
     plan: free
@@ -20,9 +20,9 @@ services:
       mountPath: /var/data
       sizeGB: 1
 
-  # COSMOS 3D Planet Explorer Frontend Static Site
+  # ASTRA Mission Trainer Frontend Web Service
   - type: web
-    name: cosmos-frontend
+    name: astra-mission-trainer
     env: static
     region: oregon
     plan: free
