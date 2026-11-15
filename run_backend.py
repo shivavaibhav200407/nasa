@@ -1,3 +1,4 @@
+import os
 import sys
 from pathlib import Path
 
@@ -10,5 +11,7 @@ from app.main import app  # noqa: F401
 
 if __name__ == "__main__":
     import uvicorn
-    print("Starting ASTRA FastAPI backend server on http://127.0.0.1:8000 ...")
-    uvicorn.run("app.main:app", host="127.0.0.1", port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))
+    host = os.environ.get("HOST", "0.0.0.0")
+    print(f"Starting ASTRA FastAPI backend server on http://{host}:{port} ...")
+    uvicorn.run("app.main:app", host=host, port=port)
