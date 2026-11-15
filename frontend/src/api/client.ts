@@ -13,7 +13,7 @@ import type {
   MissionSummary,
 } from '../types/mission';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? '' : 'http://127.0.0.1:8000');
 
 class ApiError extends Error {
   status: number;
