@@ -158,9 +158,9 @@ def create_presentation():
     p_links_hdr.space_before = Pt(18)
 
     links_data = [
-        ("🌐 Live Web App (Vercel)", "https://astra-mission-trainer.vercel.app", "Interactive Single Page App"),
-        ("⚡ Production API (Render)", "https://astra-mission-trainer-api.onrender.com", "FastAPI Simulation Engine"),
-        ("📑 Interactive API Docs", "https://astra-mission-trainer-api.onrender.com/docs", "OpenAPI / Swagger Spec"),
+        ("🌐 Live Web App (Vercel)", "https://nasa-teal-psi.vercel.app", "Interactive Single Page App"),
+        ("⚡ Production API (Render)", "https://astra-mission-trainer1.onrender.com", "FastAPI Simulation Engine"),
+        ("📑 Interactive API Docs", "https://astra-mission-trainer1.onrender.com/docs", "OpenAPI / Swagger Spec"),
         ("📦 Source Code (GitHub)", "https://github.com/shivavaibhav200407/nasa", "Full Stack Open Source"),
     ]
 
@@ -337,9 +337,9 @@ def create_presentation():
     ], CYAN)
 
     add_card(s7, Inches(6.9), Inches(1.9), Inches(5.6), Inches(5.0), "Official Submission Links (Clickable)", [
-        ("Live Web App (Vercel)", "https://astra-mission-trainer.vercel.app", "Main Interactive Client"),
-        ("Production API (Render)", "https://astra-mission-trainer-api.onrender.com", "Live Simulation Engine"),
-        ("OpenAPI Documentation", "https://astra-mission-trainer-api.onrender.com/docs", "Interactive Swagger UI"),
+        ("Live Web App (Vercel)", "https://nasa-teal-psi.vercel.app", "Main Interactive Client"),
+        ("Production API (Render)", "https://astra-mission-trainer1.onrender.com", "Live Simulation Engine"),
+        ("OpenAPI Documentation", "https://astra-mission-trainer1.onrender.com/docs", "Interactive Swagger UI"),
         ("GitHub Repository", "https://github.com/shivavaibhav200407/nasa", "Full Source Code"),
         ("Space Apps Challenge", "https://www.spaceappschallenge.org/", "Official Event Portal"),
         "28-Second Demo Video: ASTRA_30s_SpaceApps_Demo.webm included in submission bundle."
